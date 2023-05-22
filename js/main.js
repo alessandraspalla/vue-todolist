@@ -3,10 +3,7 @@ const {createApp} = Vue;
 createApp({
     data(){
         return {
-            newItem:{
-                text:'',
-                done: false
-            },
+            testo:'',
             items: [
                 {
                     text: 'Fare i compiti',
@@ -21,10 +18,29 @@ createApp({
     },
     methods: {
         addTask(){
-            if(this.newItem.text !== ''){
-                this.items.push(this.newItem);
+            const newTask = {
+                text: this.testo,
+                done: false
             }
-            this.newItem.text = '';
+            if(newTask.text !== ''){
+                this.items.unshift(newTask);
+            }
+
+            this.testo = ''
+        },
+        // MILESTONE 2
+        deleteTask(indice){
+            console.log(indice);
+            this.items.splice(indice, 1)
+        },
+
+        // BONUS 2
+        toggleDone(indice){
+            if(this.items[indice].done === true){
+                this.items[indice].done = false 
+            } else {
+                this.items[indice].done = true
+            }
         }
     }
 }).mount('#app');

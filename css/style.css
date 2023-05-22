@@ -8,3 +8,53 @@
 ul {
     list-style: none;
 }
+
+.line-through {
+    text-decoration: line-through;
+}
+
+.container {
+    overflow: auto;
+    width: 50%;
+    min-height: 300px;
+    background-color: teal;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+#input {
+    margin-bottom: 30px;
+}
+
+#input > input {
+    width: 70%;
+    height: 2rem;
+    border-radius: 1rem;
+    border: none;
+}
+
+#input > button {
+    height: 2rem;
+    border-radius: .7rem;
+    margin-left: 1rem;
+    border: none;
+    padding: 3px;
+}
+
+#todolist {
+    width: 90%;
+    margin: 0 auto;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid white;
+    color: white;
+}
